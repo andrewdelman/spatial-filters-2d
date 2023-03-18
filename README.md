@@ -10,7 +10,7 @@ The functions in this repository apply various two-dimensional spatial filters t
 The most widely applicable filtering functions in this repository implement 2-D low-pass filters. The residual of applying these functions can also be used to isolate smaller scales, and these filters can also be combined to effectively "bandpass" for a specific range of spatial scales. The core filter in these functions is applied as a window in 2-D wavenumber space, after a planar fit to the current tile has been removed and the tile is nested in a larger 2x2 tile of zeros to buffer the edges. The transfer function for the 2-D spectral coefficients is
 
 $$
-F_f(k,l) = \left[0.5 - 0.5\rm{erf}\left( s \, \rm{ln}\frac{K}{K_0}\right)\right] F(k,l)
+F_f(k,l) = \left[0.5 - 0.5\rm{erf}\left( s  \rm{ln}\frac{K}{K_0}\right)\right] F(k,l)
 $$
 
 where $F(k,l)$ is the input wavenumber coefficient for wavenumbers $k$ and $l$ with wavenumber magnitude $K = (k^2 + l^2)^{1/2}$, $K_0$ is the wavenumber representing the half-amplitude cutoff (with a slight adjustment from the half-power cutoff wavelength specified in `deg_threshold`), $s$ is `steepness_factor` representing how abrupt the cutoff is, and $F_f(k,l)$ is the filtered wavenumber coefficient. This filter is a two-dimensional extension of the one-dimensional filter used in Delman and Lee ([2020](https://doi.org/10.5194/os-16-979-2020); [2021](https://doi.org/10.5194/os-17-1031-2021)).
