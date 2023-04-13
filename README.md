@@ -34,4 +34,4 @@ For the functions specifically intended to handle horizontal velocities (which c
 
 **spat_filter_vel_2d_lp.m:** For filtering of horizontal velocity components $u$, $v$ in a non-periodic, locally Cartesian grid. The near-coastal velocity field adjustment is implemented to reduce flow across the low-passed (smoothed) coastline.
 
-**spatial_filters_2d_lp.py:** A Python module containing the function `spat_filter_2d_lp.py`, equivalent to the Matlab function above. Can be imported into Python code or a Jupyter notebook by calling `from spatial_filters_2d_lp import *`.
+**spatial_filters_2d_lp.py:** A Python module containing the function `spat_filter_2d_lp`, equivalent to the Matlab function above. Can be imported into Python code or a Jupyter notebook by calling `from spatial_filters_2d_lp import *`.
